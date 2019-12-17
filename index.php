@@ -5,7 +5,8 @@ require_once 'controller/controller.php';
 switch ($action)
 {
     case 'concerts':
-        showConcerts();
+        $future = $_GET['future'];
+        showConcerts($future);
         break;
     case 'movies':
         showMovies();
