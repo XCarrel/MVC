@@ -1,12 +1,14 @@
 <?php
 $action = $_GET['action'];
+require_once 'controller/controller.php';
+
 switch ($action)
 {
     case 'concerts':
-        require_once 'view/concerts.php';
+        showConcerts();
         break;
     case 'movies':
-        require_once 'view/movies.php';
+        showMovies();
         break;
     default:
         require_once 'view/home.php';
