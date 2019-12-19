@@ -1,27 +1,17 @@
 <?php
-if (isset($_GET['action']))
-{
-    $action = $_GET['action'];
-}
-else
-{
-    $action = 'home';
-}
+$action = $_GET['action'];
+require_once 'controller/controller.php';
 
-switch($action)
+switch ($action)
 {
-    case 'movies':
-        $title='Films';
-        $content = 'Liste des films';
-        break;
     case 'concerts':
-        $title='Concerts';
-        $content = 'Liste des concerts';
+        $future = $_GET['future'];
+        showConcerts($future);
+        break;
+    case 'movies':
+        showMovies();
         break;
     default:
-        $title='Home';
-        $content = 'Maison';
-        break;
+        require_once 'view/home.php';
 }
-require_once 'gabarit.php';
 ?>
